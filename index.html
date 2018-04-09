@@ -1,0 +1,273 @@
+<!doctype html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>A Smarter Way to Test Accessibility</title>
+
+	<link rel="stylesheet" href="lib/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/myplanet.css">
+	<link rel="stylesheet" href="css/presentation.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/highlight-github.css">
+
+	<link rel="icon" href="lib/myplanet/logo/radiant-orange/mark-knockout.svg"/>
+
+	<meta property="og:url" content="https://github.com/laura-johnson/presentation-accessibility/" />
+	<meta property="og:title" content="A Smarter Way to Test Accessibility" />
+
+	<script src="js/reveal-print.js"></script>
+</head>
+<body>
+<div class="reveal pattern--molecules">
+	<div class="slides">
+		<section>
+			<section class="title" id="title">
+				<div class="grid-wrapper">
+					<div class="header">
+						<div class="logo logo--full"><span class="visually-hidden">Myplanet</span></div>
+					</div>
+					<div class="content">
+						<h1>A Smarter Way to Test Accessibility</h1>
+						<h2>A Comparison of Top Tools</h2>
+						<h3>(Lighthouse, Tenon.io and WAVE API)</h3>
+						<div class="description">
+							DrupalCon Nashville 2018
+						</div>
+					</div>
+					<div class="credit">
+						<hr>
+						<div class="label">Presented By</div>
+						<div class="name">Everett Zufelt & Laura Johnson</div>
+					</div>
+					<a class="presentation-url" href="https://github.com/laura-johnson/presentation-accessibility/">https://github.com/laura-johnson/presentation-accessibility/</a>
+				</div>
+	        </section>
+
+	    </section>
+		<!-- Team page can accommodate one or two profiles. -->
+		<section class="team" id="team">
+			<div class="grid-wrapper">
+				<div class="header">
+					<div class="logo"></div>
+					<div class="section">Team</div>
+				</div>
+				<div class="content">
+					<div class="profile">
+						<div class="basics">
+							<img src="images/everett-2.jpg" alt="Everett Zufelt">
+							<div class="name">Everett Zufelt</div>
+							<div class="role">Director of Technology at Myplanet</div>
+						</div>
+						<div class="details">
+							<h2>Profile</h2>
+							<p>Everett Zufelt is Director of Technology at Myplanet. He works with enterprise customers to provide solutions that Grow engagement, drive conversions and maximize awareness. Everett believes that growing relationships is essential to building great digital products. He coaches and leads product development teams, who work with a variety of web and mobile technologies, to assist them with building the skills that enable them to deliver the right thing, fast.</p>
+							<p class="supplement">Everett holds PMI's Agile Certified Practitioner, Scrum Alliance's Certified ScrumMaster, and Acquia's Acquia Certified Grand Master 2015 certifications.</p>
+						</div>
+					</div>
+					<div class="profile">
+						<div class="basics">
+							<img src="images/laura.jpg" alt="Laura Johnson">
+							<div class="name">Laura Johnson</div>
+							<div class="role">Software Developer at Myplanet</div>
+						</div>
+						<div class="details">
+							<h2>Profile</h2>
+							<p>Laura Johnson is a Software Developer at Myplanet as well as liaison and event coordinator for the DrupalTO community.  She has been a Drupal developer, contributor and mentor for over 10 years. Laura believes that the internet is an immensely important resource for people regardless of hardware, software, language, location, or ability, which is why she champions accessibility in all web development.</p>
+							<p class="supplement">Laura and Everett will also be presenting at the Guelph Accessibility Conference at the University of Guelph on May 30th.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="topics" id="topics">
+			<section>
+				<div class="grid-wrapper">
+					<div class="header">
+					</div>
+					<div class="content">
+						<h1>Topics</h1>
+						<div>
+							<ul>
+								<li>Automated vs Manual Web accessibility testing</li>
+								<li>3 tools in a nutshell</li>
+								<li>Browser extensions make testing easy</li>
+								<li>Command line interfaces speed up local testing</li>
+								<li>Continuous integration testing improves reliability</li>
+								<li>Applying machine learning to accessibility testing</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section class="pullquote" id="pullquote">
+			<section>
+				<div class="grid-wrapper">
+					<div class="header">
+					</div>
+					<div class="content">
+						<div>
+							<p>Following these guidelines will make content accessible to a wider range of people with disabilities, including blindness and low vision, deafness and hearing loss, learning disabilities, cognitive limitations, limited movement, speech disabilities, photosensitivity, and combinations of these.</p>
+							<p>Web Content Accessibility Guidelines (WCAG) 2.1
+								https://www.w3.org/TR/WCAG21/</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section class="testing" id="testing">
+			<section>
+				<div class="grid-wrapper">
+					<div class="header">
+					</div>
+					<div class="content">
+						<h1>Automated vs Manual Web Accessibility Testing</h1>
+						<div>
+							<ul>
+								<li>Does the image have alt text; is the alt text accurate given the context</li>
+								<li>Does the form field have a label and description; is the description easy to understand</li>
+								<li>Does the content have headings; do the headings represent the correct hierarchy</li>
+								<li>Is the HTML valid; is the HTMl semantic</li>
+								<li>(Custom implementation); does the application UI behave as expected</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section class="tools" id="tools">
+			<section>
+				<div class="grid-wrapper">
+					<div class="header">
+					</div>
+					<div class="content">
+						<h1>The tools</h1>
+					<div class="tool">
+						<table>
+							<tr><th><p>Lighthouse</p></th><td><img src="images/lighthouse.png" alt="Lighthouse logo"></td></tr>
+							<tr><th><p>Tenon.io</p></th><td><img src="images/tenon-logo.png" alt="tenon.io logo"></td></tr>
+							<tr><th><p>WAVE API</p></th><td class="wave"><img src="images/wavelogo.png" alt="WAVE API logo"></td></tr>
+						</table>
+					</div>
+				</div>
+				</div>
+			</section>
+			<section>
+				<div class="grid-wrapper">
+					<div class="header">
+						<div class="logo"></div>
+					</div>
+					<div class="content">
+						<h1>Browser extensions make testing easy</h1>
+						<table>
+							<tr><th>Advantages:</th><td>free!</td><td>easy</td></tr>
+							<tr><th>Disadvantages:</th><td>time consuming</td><td>single URL</td></tr>
+						</table>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="grid-wrapper">
+					<div class="header">
+						<div class="logo"></div>
+					</div>
+					<div class="content">
+						<h1>Command line interfaces speed up local testing</h1>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="grid-wrapper">
+					<div class="header">
+						<div class="logo"></div>
+					</div>
+					<div class="content">
+						<h1>Continuous integration improves reliability</h1>
+					</div>
+				</div>
+			</section>
+		</section><!--/tools -->
+		<section class="picturequote" id="picturequote">
+			<section>
+				<div class="grid-wrapper">
+					<div class="header">
+					</div>
+					<div class="content">
+						<p>
+							When's the last time you were looking through the pictures on your phone and said to yourself "I love this picture of 'Two adults standing with a dog in a nature landscape"?
+						</p>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section class="machinelearning" id="machinelearning">
+			<section>
+				<div class="grid-wrapper">
+					<div class="header">
+					</div>
+					<div class="content">
+						<h1>Applying Machine Learning to Accessibility Testing</h1>
+						<div>
+							<p>Machine learning may someday enable automated tools to detect and remediate many more barriers. Machine learning tools could potentially:</p>
+							<ul>
+								<li>Identify and provide alternate mediums for images, sounds and videos</li>
+								<li>Identify and convey accurate meaning from media - "Two adults standing with a dog in a nature landscape"</li>
+								<li>Identify and resolve barriers to interacting with user interfaces, typically inferred through affordances</li>
+								<li>Simplify content and interfaces, sharing synthesis in a clear, easily discoverable, non-intrusive way</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section id="nashville-sprints">
+			<div class="grid-wrapper">
+				<div>
+					<h1>Join us for contribution sprints</h1>
+					<h2>Friday, April 13, 2018</h2>
+				</div>
+				<div class="sprint-times">
+					<div>
+						<h2>Mentored <br class="only-landscape"/>Core Sprint</h2>
+						9:00 - 18:00<br/>
+						Room: 103
+					</div>
+					<div>
+						<h2>First time <br class="only-landscape"/>sprinter workshop</h2>
+						9:00 - 12:00<br/>
+						Room: 101
+					</div>
+					<div>
+						<h2>General <br class="only-landscape"/>Sprint</h2>
+						9:00 - 18:00<br/>
+						Room: 104
+					</div>
+				</div>
+				<h1>#drupalsprint</h1>
+			</div>
+		</section>
+		<section id="nashville-feedback">
+			<div class="grid-wrapper">
+				<h1>What did you think?</h1>
+				<div>
+					<h2>Locate this session at the DrupalCon Nashville Website:</h2>
+					<a href="https://nashville2018.drupal.org/schedule">https://nashville2018.drupal.org/schedule</a>
+					<h2>Take the Survey!</h2>
+					<a href="https://www.surveymonkey.com/r/DrupalConNashville">https://www.surveymonkey.com/r/DrupalConNashville</a>
+				</div>
+				<img src="images/nashville-thankyou.png"/>
+			</div>
+		</section>
+	</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/reveal-init.js"></script>
+</body>
+</html>
