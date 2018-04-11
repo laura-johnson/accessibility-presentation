@@ -278,3 +278,7 @@ section[id^="nashville"] [src*="nashville-thankyou"] {
         margin-bottom: 5vmin;
     }
 }
+
+.description {
+    max-width: 300px;
+}
