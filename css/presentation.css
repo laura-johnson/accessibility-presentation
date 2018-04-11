@@ -162,7 +162,7 @@ align-self: flex-start;
 
 .grid-wrapper ul {
     font-size: 18px;
-    color: #9292A8;
+    color: #66646B;
     align-self: left;
     justify-self: left;
 }
@@ -281,4 +281,12 @@ section[id^="nashville"] [src*="nashville-thankyou"] {
     .sprint-times > div {
         margin-bottom: 5vmin;
     }
+}
+
+.description ol {
+    color: #66646B;
+}
+
+.machine {
+    color: #66646B;
 }
