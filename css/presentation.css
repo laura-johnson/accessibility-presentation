@@ -123,37 +123,53 @@ img {
     width: 1.8ex;
 }
 
-#tools img {
+.tool img {
     height: 70px;
     position: relative;
-    top: 5px;
+    top: 15px;
 }
 
-#tools .tool td {
+.tool td {
     padding: 2em 0 0 3em;
 }
 
-#tools .tool td.wave img {
+.tool td.wave img {
     height: 60px;
     margin-left: 10px;
 }
 
-#tools .tool th {
+.tool th {
 padding-bottom: 5px;
 }
 
-#tools .tool td {
+.tool td {
     padding-bottom: 0;
 }
 
-#tools .toolname {
+.toolname {
     float: left;
     padding-top: 70px;
     font-size: 24px;
 }
 
-#tools .tool .content {
+.tool .content {
 align-self: flex-start;
+}
+
+.tool table {
+    margin-top: 5em;
+}
+
+.grid-wrapper ul {
+    font-size: 18px;
+    color: #9292A8;
+    align-self: left;
+    justify-self: left;
+}
+
+.grid-wrapper ul li {
+    font-size: 18px;
+    margin-left: 1.3em;
 }
 
 
